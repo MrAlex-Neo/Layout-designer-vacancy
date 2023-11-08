@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #FAFAFA;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px - 100px); /* 50px для шапки, 100px для подвала */
+    width: 100%;
+}
+.chatHeader {
+    min-height: 30px;
+    max-height: 50px; /* Примерный максимальный размер шапки */
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+.chatBody{
+    display: flex;
+    height: 100%;
+    border-bottom: 1px solid gray;
+}
+.bodyLeft{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    flex-grow: 1;
+    border-right: 1px solid gray;
+}
+.friend{
+    display: flex;
+    gap: 1em;
+    border: 1px solid blue;
+    width: 15em;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: rgb(211, 211, 247);
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.friend:hover{
+    border: 1px solid rgb(169, 169, 173);
+    background-color: rgb(243, 243, 243);
+}
+.friendInfo p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+}
+.friendInfo span{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: rgb(135, 146, 156);
+    text-decoration:dashed;
+}
+.friend img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.bodyRight{
+    flex-grow: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.bodyLeft, .bodyRight {
+    padding: 20px;
+    overflow-y: auto;
+    min-height: calc(100vh - 200px); /* Общая высота чата минус высота шапки и подвала */
+    max-height: calc(100vh - 250px); /* Ограничение высоты, если контент слишком много не вышел за пределы экрана */
+}
+
+.bodyRight .friendInfo{
+    padding: 10px;
+    border-radius: 10px;
+    width: 30vw;
+}
+.bodyRight .myLetter{
+    border: 1px solid darkblue;
+    background-color: rgb(181, 181, 255);
+}
+.bodyRight .friendLetter{
+    border: 1px solid darkgoldenrod;
+    border-color: rgb(251, 204, 204);
+}
+.chatFooter {
+    min-height: 60px;
+    max-height: 100px; /* Примерный максимальный размер подвала */
+    padding: 20px;
+}
